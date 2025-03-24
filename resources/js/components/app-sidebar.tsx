@@ -13,6 +13,11 @@ const mainNavItems: NavItem[] = [
         href: '/dashboard',
         icon: LayoutGrid,
     },
+    {
+        title: 'Teachers',
+        href: '/admin/teachers',
+        icon: BookOpen,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
