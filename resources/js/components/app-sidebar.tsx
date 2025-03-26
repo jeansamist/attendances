@@ -15,7 +15,7 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Teachers',
-        href: '/admin/teachers',
+        href: '/teachers',
         icon: BookOpen,
     },
 ];
