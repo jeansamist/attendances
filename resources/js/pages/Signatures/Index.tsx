@@ -70,7 +70,7 @@ export default function Signatures({ signatures, canValidate }: SignaturesProps)
                                     <TableHead>Date</TableHead>
                                     <TableHead>Type</TableHead>
                                     <TableHead>Status</TableHead>
-                                    {canValidate && <TableHead className="text-right">Actions</TableHead>}
+                                    <TableHead className="text-right">Actions</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
@@ -79,15 +79,14 @@ export default function Signatures({ signatures, canValidate }: SignaturesProps)
                                         <TableCell>{format(new Date(signature.created_at), 'PPpp')}</TableCell>
                                         <TableCell className="capitalize">{signature.type}</TableCell>
                                         <TableCell>{signature.validated ? 'Validated' : 'Pending'}</TableCell>
-                                        {canValidate && (
-                                            <TableCell className="text-right">
-                                                {!signature.validated && (
-                                                    <Button variant="outline" size="sm" onClick={() => validateSignature(signature.id)}>
-                                                        Validate
-                                                    </Button>
-                                                )}
-                                            </TableCell>
-                                        )}
+
+                                        <TableCell className="text-right">
+                                            {!signature.validated && (
+                                                <Button variant="outline" size="sm" onClick={() => validateSignature(signature.id)}>
+                                                    Validate
+                                                </Button>
+                                            )}
+                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

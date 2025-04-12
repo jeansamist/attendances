@@ -21,7 +21,6 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/{teacher}/toggle-status', [TeacherController::class, 'toggleStatus'])->name('teachers.toggle-status');
     });
 
-    Route::get('/attendances', [SignatureController::class, 'index'])->name('attendances');
     Route::get('/signatures', [SignatureController::class, 'index'])->name('signatures.index');
     Route::middleware(['teacher'])->group(function () {
         Route::post('/signatures', [SignatureController::class, 'store'])->name('signatures.store');
